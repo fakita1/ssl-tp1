@@ -23,6 +23,8 @@ int realizarOperacion(char* cadena) {
             temp->next = NULL;
         }
 
+        // Si el siguiente caracter es un '*', agarraremos el digito y lo multiplicaremos por los siguientes hasta
+        // que se encuentre una operación que no sea '*'
         if (cadena[i + 1] == '*') {
             int resultadoMultiplicacion = charToInt(cadena[i]);
             i++;
@@ -32,6 +34,8 @@ int realizarOperacion(char* cadena) {
                 }
                 i++;
             }
+            // Volvemos el indice hacia atrás porque quedó en la operación, y como el for avanzará el indice de nuevo,
+            // necesitamos atrasarlo para que se registre el operador en un nodo.
             i--;
             temp->digit = resultadoMultiplicacion;
         } else if (i % 2 == 0){
@@ -62,6 +66,7 @@ int realizarOperacion(char* cadena) {
     int resultado = lista->digit;
     temp = lista->next;
 
+    // Recorremos la lista y por cada operador avanzamos al siguiente nodo que contendrá un dígito y operamos con eso.
     while (temp != NULL) {
         char operacion = temp->digit;
         temp = temp->next;
