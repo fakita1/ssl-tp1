@@ -8,46 +8,69 @@ typedef struct Node {
 int realizarOperacion(char* cadena) {
     if (!esOperacionValida(cadena)) return 0;
 
-    Node* lista = malloc(sizeof(Node));
-    Node* puntero = lista;
+    Node* lista = NULL;
+    Node* temp = NULL;
 
+    // Index par = numero
+    // Index impar = operacion
     for (int i = 0; cadena[i] != '\0'; i++) {
+        if (lista == NULL) {
+            lista = malloc(sizeof(Node));
+            temp = lista;
+        } else {
+            temp->next = malloc(sizeof(Node));
+            temp = temp->next;
+            temp->next = NULL;
+        }
 
         if (cadena[i + 1] == '*') {
             int resultadoMultiplicacion = charToInt(cadena[i]);
             i++;
-            while (cadena[i] != '+' && cadena[i] != '-'){
+            while (cadena[i] != '+' && cadena[i] != '-' && cadena[i] != '\0'){
                 if (cadena[i] != '*') {
                     resultadoMultiplicacion *= charToInt(cadena[i]);
                 }
                 i++;
             }
             i--;
-            puntero->digit = intToChar(resultadoMultiplicacion);
-            puntero->next = malloc(sizeof(Node));
-            puntero = puntero->next;
-            puntero->digit = '\0';
+            temp->digit = resultadoMultiplicacion;
+        } else if (i % 2 == 0){
+            temp->digit = charToInt(cadena[i]);
         } else {
-            puntero->digit = cadena[i];
-            puntero->next = malloc(sizeof(Node));
-            puntero = puntero->next;
-            puntero->digit = '\0';
+            temp->digit = cadena[i];
         }
+
     }
 
-    int resultado = charToInt(lista->digit);
-    Node* temp = lista->next;
-    printf("primero %d\n", resultado);
-    while (temp->digit != '\0') {
+    /*
+    // Debugging para multiplicaciones
+    printf("Luego de multiplicaciones: ");
+    temp = lista;
+    int i = 0;
+    while (temp != NULL) {
+        if (i % 2 == 0) {
+            printf("%d", temp->digit);
+        } else {
+            printf("%c", temp->digit);
+        }
+        i++;
+        temp = temp->next;
+    }
+     */
+
+
+    int resultado = lista->digit;
+    temp = lista->next;
+
+    while (temp != NULL) {
         char operacion = temp->digit;
         temp = temp->next;
         if (operacion == '+') {
-            printf("mas %d\n", charToInt(temp->digit));
-            resultado += charToInt(temp->digit);
+            resultado += temp->digit;
         } else {
-            printf("menos %d\n", charToInt(temp->digit));
-            resultado -= charToInt(temp->digit);
+            resultado -= temp->digit;
         }
+
         temp = temp->next;
     }
 
