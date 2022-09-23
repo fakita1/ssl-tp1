@@ -6,7 +6,7 @@ int columnaDecimal(char c){
         return 1;
     else {
         // Si al codigo ascii de '0' le restamos 48  llegamos a 0.
-        int decimal = c - 48;
+        int decimal = c - '0';
 
         // Si el decimal cumple esta condicion significa que no esta en el rango 0-9.
         if (decimal < 0 || decimal > 9) return 12;
@@ -24,7 +24,7 @@ int esDecimal(const char* cadena) {
             {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
     };
 
-    int resultado = esPalabra(13, tt, columnaDecimal, cadena);
+    int resultado = esPalabra(13, tt, columnaDecimal, cadena, 1, 2);
 
     if (resultado) {
         printf("La cadena %s fue aceptada como decimal\n", cadena);

@@ -1,7 +1,7 @@
 #include "octal.h"
 
 int columnaOctal(char c){
-    int decimal = c - 48;
+    int decimal = c - '0';
 
     // Si el decimal cumple esta condicion significa que no esta en el rango 0-7.
     if (decimal < 0 || decimal > 7) return 8;
@@ -18,7 +18,7 @@ int esOctal(const char* cadena) {
             {2, 2, 2, 2, 2, 2, 2, 2, 2},
     };
 
-    int resultado = esPalabra(9, tt, columnaOctal, cadena);
+    int resultado = esPalabra(9, tt, columnaOctal, cadena, 1, 2);
 
     if (resultado) {
         printf("La cadena %s fue aceptada como octal\n", cadena);

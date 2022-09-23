@@ -2,7 +2,7 @@
 
 int columnaHexa(char c){
     // Si al codigo ascii de '0' le restamos 48  llegamos a 0.
-    int decimal = c - 48;
+    int decimal = c - '0';
 
     if (decimal >= 0 && decimal <= 9) {
         return decimal;
@@ -26,7 +26,7 @@ int esHexa(const char* cadena) {
             {2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2},
     };
 
-    int resultado = esPalabra(17, tt, columnaHexa, cadena);
+    int resultado = esPalabra(17, tt, columnaHexa, cadena, 1, 2);
 
     if (resultado) {
         printf("La cadena %s fue aceptada como hexadecimal\n", cadena);

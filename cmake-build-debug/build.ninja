@@ -76,6 +76,24 @@ build CMakeFiles/ssl_tp1.dir/octal.c.o: C_COMPILER__ssl_tp1_Debug /Users/facundo
   OBJECT_DIR = CMakeFiles/ssl_tp1.dir
   OBJECT_FILE_DIR = CMakeFiles/ssl_tp1.dir
 
+build CMakeFiles/ssl_tp1.dir/charToInt.c.o: C_COMPILER__ssl_tp1_Debug /Users/facundo/CLionProjects/ssl-tp1/charToInt.c || cmake_object_order_depends_target_ssl_tp1
+  DEP_FILE = CMakeFiles/ssl_tp1.dir/charToInt.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ssl_tp1.dir
+  OBJECT_FILE_DIR = CMakeFiles/ssl_tp1.dir
+
+build CMakeFiles/ssl_tp1.dir/esOperacionValida.c.o: C_COMPILER__ssl_tp1_Debug /Users/facundo/CLionProjects/ssl-tp1/esOperacionValida.c || cmake_object_order_depends_target_ssl_tp1
+  DEP_FILE = CMakeFiles/ssl_tp1.dir/esOperacionValida.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ssl_tp1.dir
+  OBJECT_FILE_DIR = CMakeFiles/ssl_tp1.dir
+
+build CMakeFiles/ssl_tp1.dir/realizarOperacion.c.o: C_COMPILER__ssl_tp1_Debug /Users/facundo/CLionProjects/ssl-tp1/realizarOperacion.c || cmake_object_order_depends_target_ssl_tp1
+  DEP_FILE = CMakeFiles/ssl_tp1.dir/realizarOperacion.c.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu99
+  OBJECT_DIR = CMakeFiles/ssl_tp1.dir
+  OBJECT_FILE_DIR = CMakeFiles/ssl_tp1.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ssl_tp1
@@ -84,7 +102,7 @@ build CMakeFiles/ssl_tp1.dir/octal.c.o: C_COMPILER__ssl_tp1_Debug /Users/facundo
 #############################################
 # Link the executable ssl_tp1
 
-build ssl_tp1: C_EXECUTABLE_LINKER__ssl_tp1_Debug CMakeFiles/ssl_tp1.dir/main.c.o CMakeFiles/ssl_tp1.dir/decimal.c.o CMakeFiles/ssl_tp1.dir/esPalabra.c.o CMakeFiles/ssl_tp1.dir/hexa.c.o CMakeFiles/ssl_tp1.dir/octal.c.o
+build ssl_tp1: C_EXECUTABLE_LINKER__ssl_tp1_Debug CMakeFiles/ssl_tp1.dir/main.c.o CMakeFiles/ssl_tp1.dir/decimal.c.o CMakeFiles/ssl_tp1.dir/esPalabra.c.o CMakeFiles/ssl_tp1.dir/hexa.c.o CMakeFiles/ssl_tp1.dir/octal.c.o CMakeFiles/ssl_tp1.dir/charToInt.c.o CMakeFiles/ssl_tp1.dir/esOperacionValida.c.o CMakeFiles/ssl_tp1.dir/realizarOperacion.c.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
   OBJECT_DIR = CMakeFiles/ssl_tp1.dir
   POST_BUILD = :

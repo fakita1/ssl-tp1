@@ -3,5 +3,6 @@
 #include "decimal.h"
 #include "octal.h"
 #include "hexa.h"
+#include "realizarOperacion.h"
 #include <string.h>
 #endif

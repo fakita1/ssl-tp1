@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 int main() {
     int decimales = 0, octales = 0, hexadecimales = 0;
 
@@ -16,6 +15,14 @@ int main() {
 
         token = strtok(NULL, "&");
     }
+
+    printf("\n\n3) Analizando operaciones de prueba\n");
+    realizarOperacion("3+4*7*1+3*2-5");
+    /*realizarOperacion("-1+5*6");
+    realizarOperacion("1+5*6*");
+    realizarOperacion("1+5*6");
+    realizarOperacion("1+a*6");
+    realizarOperacion("1+5**6");*/
 
     return 0;
 }
